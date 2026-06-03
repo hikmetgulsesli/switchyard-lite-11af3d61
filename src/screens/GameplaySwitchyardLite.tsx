@@ -96,9 +96,9 @@ export function GameplaySwitchyardLite({ actions, runtime }: GameplaySwitchyardL
       </div>
       </aside>
       {/* Main Playfield Area */}
-      <main className="flex-1 relative lg:ml-64 bg-surface-dim grid-pattern flex items-center justify-center p-4">
+      <main className="flex-1 relative lg:ml-64 bg-surface-dim grid-pattern flex items-center justify-center p-3 md:p-4">
       {/* Mobile HUD Fallback (Top) */}
-      <div className="md:hidden absolute top-4 left-4 right-4 flex justify-between items-center z-10 bg-surface-container-high/80 backdrop-blur-md p-3 rounded-lg border border-outline-variant">
+      <div className="md:hidden absolute top-3 left-3 right-3 flex justify-between items-center z-10 bg-surface-container-high/80 backdrop-blur-md p-3 rounded-lg border border-outline-variant">
       <div className="flex flex-col">
       <span className="text-label-caps font-label-caps text-on-surface-variant">SCORE</span>
       <span className="text-technical-md font-technical-md text-primary-fixed">{scoreLabel}</span>
@@ -113,7 +113,7 @@ export function GameplaySwitchyardLite({ actions, runtime }: GameplaySwitchyardL
       </div>
       </div>
       {/* The Grid Canvas (Centered) */}
-      <div className="relative w-[384px] h-[384px] md:w-[512px] md:h-[512px] border border-outline-variant bg-surface-container-lowest shadow-[0_0_40px_rgba(0,0,0,0.5)] flex-shrink-0">
+      <div className="relative w-[calc(100vw-48px)] max-w-[360px] aspect-square md:w-[512px] md:h-[512px] md:max-w-none border border-outline-variant bg-surface-container-lowest shadow-[0_0_40px_rgba(0,0,0,0.5)] flex-shrink-0">
       {/* Track 1 (Horizontal) */}
       <div className="absolute top-[128px] left-0 w-full h-2 bg-outline-variant z-0">
       <div className="absolute inset-0 bg-primary-fixed track-glow opacity-50 w-3/4"></div> {/* Active segment */}
