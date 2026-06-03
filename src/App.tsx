@@ -25,6 +25,36 @@ export default function App() {
     return () => window.clearInterval(tick);
   }, [state.activeScreen, state.runtime.paused]);
 
+  useEffect(() => {
+    if (state.activeScreen !== "gameplay") {
+      return;
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
+        event.preventDefault();
+        dispatch({ type: "switchLane", direction: -1 });
+      }
+
+      if (event.key === "ArrowRight" || event.key.toLowerCase() === "d") {
+        event.preventDefault();
+        dispatch({ type: "switchLane", direction: 1 });
+      }
+
+      if (event.key === " " || event.key === "Spacebar") {
+        event.preventDefault();
+        dispatch({ type: "togglePause" });
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [state.activeScreen]);
+
+  const start = useCallback(() => {
+    dispatch({ type: "start" });
+  }, []);
+
   const restart = useCallback(() => {
     dispatch({ type: "restart" });
   }, []);
@@ -65,14 +95,16 @@ export default function App() {
   useEffect(() => {
     return installSwitchyardLiteTestBridge(state, {
       navigate,
+      start,
       restart,
       step: (multiplier) => dispatch({ type: "step", multiplier }),
+      switchLane: (direction) => dispatch({ type: "switchLane", direction }),
       pause: () => dispatch({ type: "togglePause" }),
       resume: () => dispatch({ type: "resume" }),
       setDifficulty: setRuntimeDifficulty,
       savePreferences: () => dispatch({ type: "savePreferences" }),
     });
-  }, [navigate, restart, setRuntimeDifficulty, state]);
+  }, [navigate, restart, setRuntimeDifficulty, start, state]);
 
   return (
     <div data-setfarm-root data-testid="setfarm-app-root">

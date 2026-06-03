@@ -2,8 +2,10 @@ import type { SwitchyardLiteState } from "../features/switchyard-lite/switchyard
 
 export type SwitchyardLiteBridgeActions = {
   navigate: (screen: SwitchyardLiteState["activeScreen"]) => void;
+  start: () => void;
   restart: () => void;
   step: (multiplier?: number) => void;
+  switchLane: (direction: -1 | 1) => void;
   pause: () => void;
   resume: () => void;
   setDifficulty: (difficulty: SwitchyardLiteState["difficulty"]) => void;

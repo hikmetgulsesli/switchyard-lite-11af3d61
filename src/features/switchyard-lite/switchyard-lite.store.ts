@@ -1,6 +1,7 @@
 import {
   createSwitchyardLiteRuntime,
   stepSwitchyardLiteRuntime,
+  switchSwitchyardLiteLane,
   type SwitchyardLiteDifficulty,
   type SwitchyardLiteRuntime,
 } from "../../game/game-runtime";
@@ -23,9 +24,11 @@ export type SwitchyardLiteState = {
 
 export type SwitchyardLiteAction =
   | { type: "navigate"; screen: SwitchyardLiteScreen }
+  | { type: "start" }
   | { type: "restart" }
   | { type: "setDifficulty"; difficulty: SwitchyardLiteDifficulty }
   | { type: "step"; multiplier?: number }
+  | { type: "switchLane"; direction: -1 | 1 }
   | { type: "togglePause" }
   | { type: "resume" }
   | { type: "savePreferences" };
@@ -49,6 +52,14 @@ export function switchyardLiteReducer(
   switch (action.type) {
     case "navigate":
       return { ...state, activeScreen: action.screen };
+    case "start":
+      return {
+        ...state,
+        activeScreen: "gameplay",
+        runtime: state.runtime.gameOver
+          ? createSwitchyardLiteRuntime(state.difficulty)
+          : { ...state.runtime, paused: false, status: "playing" },
+      };
     case "restart":
       return {
         ...state,
@@ -70,15 +81,31 @@ export function switchyardLiteReducer(
         highScore: Math.max(state.highScore, runtime.score),
       };
     }
-    case "togglePause":
+    case "switchLane":
       return {
         ...state,
-        runtime: { ...state.runtime, paused: !state.runtime.paused },
+        runtime: switchSwitchyardLiteLane(state.runtime, action.direction),
+      };
+    case "togglePause":
+      if (state.runtime.gameOver) {
+        return state;
+      }
+
+      return {
+        ...state,
+        runtime: {
+          ...state.runtime,
+          paused: !state.runtime.paused,
+          status: state.runtime.paused ? "playing" : "paused",
+        },
       };
     case "resume":
       return {
         ...state,
-        runtime: { ...state.runtime, paused: false },
+        activeScreen: "gameplay",
+        runtime: state.runtime.gameOver
+          ? state.runtime
+          : { ...state.runtime, paused: false, status: "playing" },
       };
     case "savePreferences": {
       const storageStatus = saveSwitchyardLitePreferences({
