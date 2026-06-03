@@ -1,0 +1,133 @@
+[
+  {
+    "screenId": "531591f0d25c4ce88cfb11077e08fd8f",
+    "title": "Game Settings - Switchyard Lite",
+    "componentName": "GameSettingsSwitchyardLite",
+    "file": "src/screens/GameSettingsSwitchyardLite.tsx",
+    "buttons": 6,
+    "inputs": 2,
+    "links": 0,
+    "actions": [
+      {
+        "id": "close-1",
+        "kind": "button",
+        "label": "Close",
+        "index": 0
+      },
+      {
+        "id": "easy-2",
+        "kind": "button",
+        "label": "EASY",
+        "index": 1
+      },
+      {
+        "id": "normal-3",
+        "kind": "button",
+        "label": "NORMAL",
+        "index": 2
+      },
+      {
+        "id": "hard-4",
+        "kind": "button",
+        "label": "HARD",
+        "index": 3
+      },
+      {
+        "id": "return-to-gameplay-5",
+        "kind": "button",
+        "label": "Return to Gameplay",
+        "index": 4
+      },
+      {
+        "id": "save-preferences-6",
+        "kind": "button",
+        "label": "Save Preferences",
+        "index": 5
+      }
+    ]
+  },
+  {
+    "screenId": "cf1c40d214cb4b51b4c67fd831eb6c38",
+    "title": "Gameplay - Switchyard Lite",
+    "componentName": "GameplaySwitchyardLite",
+    "file": "src/screens/GameplaySwitchyardLite.tsx",
+    "buttons": 4,
+    "inputs": 0,
+    "links": 7,
+    "actions": [
+      {
+        "id": "settings-1",
+        "kind": "button",
+        "label": "Settings",
+        "index": 0
+      },
+      {
+        "id": "restart-2",
+        "kind": "button",
+        "label": "Restart",
+        "index": 1
+      },
+      {
+        "id": "sync-alt-3",
+        "kind": "button",
+        "label": "Sync Alt",
+        "index": 2
+      },
+      {
+        "id": "pause-4",
+        "kind": "button",
+        "label": "PAUSE",
+        "index": 3
+      },
+      {
+        "id": "status-playing-1",
+        "kind": "link",
+        "label": "STATUS: PLAYING",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "score-12-450-2",
+        "kind": "link",
+        "label": "SCORE: 12,450",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "mult-x4-5-3",
+        "kind": "link",
+        "label": "MULT: x4.5",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "lvl-08-4",
+        "kind": "link",
+        "label": "LVL: 08",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "resume-5",
+        "kind": "link",
+        "label": "Resume",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "restart-6",
+        "kind": "link",
+        "label": "Restart",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "quit-7",
+        "kind": "link",
+        "label": "Quit",
+        "href": "#",
+        "index": 6
+      }
+    ]
+  }
+]
