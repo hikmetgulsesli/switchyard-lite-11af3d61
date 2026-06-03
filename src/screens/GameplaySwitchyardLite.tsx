@@ -14,12 +14,23 @@ export type GameplaySwitchyardLiteActionId = "settings-1" | "restart-2" | "sync-
 
 export interface GameplaySwitchyardLiteProps {
   actions?: Partial<Record<GameplaySwitchyardLiteActionId, () => void>>;
-  runtime?: { player?: { lane?: number; position?: number }; obstacles?: Array<{ lane?: number; position?: number }>; shards?: Array<{ lane?: number; position?: number }>; score?: number; energy?: number; lives?: number; paused?: boolean };
+  runtime?: { player?: { lane?: number; position?: number }; obstacles?: Array<{ lane?: number; position?: number }>; shards?: Array<{ lane?: number; position?: number }>; score?: number; energy?: number; lives?: number; routesCompleted?: number; level?: number; paused?: boolean; gameOver?: boolean; status?: "playing" | "paused" | "gameOver" };
 
 }
 
 export function GameplaySwitchyardLite({ actions, runtime }: GameplaySwitchyardLiteProps) {
-  void runtime;
+  const score = runtime?.score ?? 12450;
+  const routesCompleted = runtime?.routesCompleted ?? 7;
+  const multiplier = (1 + routesCompleted * 0.5).toFixed(1);
+  const level = runtime?.level ?? 8;
+  const status = runtime?.status ?? (runtime?.paused ? "paused" : "playing");
+  const statusLabel = status === "gameOver" ? "GAME OVER" : status.toUpperCase();
+  const scoreLabel = score.toLocaleString("en-US");
+  const levelLabel = String(level).padStart(2, "0");
+  const playerLeft = `${Math.min(88, Math.max(0, runtime?.player?.position ?? 0))}%`;
+  const playerTop = `${Math.min(88, Math.max(0, (runtime?.player?.lane ?? 1) * 25 + 6))}%`;
+  const actionLabel = runtime?.paused ? "PAUSED" : "PAUSE";
+
   return (
     <>
       {/* TopAppBar (Predicted JSON structure) */}
@@ -31,15 +42,15 @@ export function GameplaySwitchyardLite({ actions, runtime }: GameplaySwitchyardL
       <div className="hidden md:flex gap-8">
       <div className="flex flex-col items-center">
       <span className="text-label-caps font-label-caps text-on-surface-variant opacity-80">SCORE</span>
-      <span className="text-technical-lg font-technical-lg text-primary-fixed">12,450</span>
+      <span className="text-technical-lg font-technical-lg text-primary-fixed">{scoreLabel}</span>
       </div>
       <div className="flex flex-col items-center">
       <span className="text-label-caps font-label-caps text-on-surface-variant opacity-80">MULT</span>
-      <span className="text-technical-lg font-technical-lg text-tertiary-fixed">x4.5</span>
+      <span className="text-technical-lg font-technical-lg text-tertiary-fixed">x{multiplier}</span>
       </div>
       <div className="flex flex-col items-center">
       <span className="text-label-caps font-label-caps text-on-surface-variant opacity-80">LVL</span>
-      <span className="text-technical-lg font-technical-lg text-on-surface">08</span>
+      <span className="text-technical-lg font-technical-lg text-on-surface">{levelLabel}</span>
       </div>
       </div>
       <div className="flex items-center gap-4">
@@ -62,19 +73,19 @@ export function GameplaySwitchyardLite({ actions, runtime }: GameplaySwitchyardL
       <nav className="flex flex-col gap-2 px-4 flex-1">
       <a className="flex items-center gap-4 p-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors bg-primary-container text-on-primary-container font-bold border-l-4 border-primary-fixed active:scale-95 transition-colors" href="#" data-action-id="status-playing-1" onClick={(event) => { event.preventDefault(); actions?.["status-playing-1"]?.(); }}>
       <Play aria-hidden={true} focusable="false" />
-      <span className="text-label-caps font-label-caps">STATUS: PLAYING</span>
+      <span className="text-label-caps font-label-caps">STATUS: {statusLabel}</span>
       </a>
       <a className="flex items-center gap-4 p-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant opacity-80 active:scale-95 transition-colors" href="#" data-action-id="score-12-450-2" onClick={(event) => { event.preventDefault(); actions?.["score-12-450-2"]?.(); }}>
       <Sparkles aria-hidden={true} focusable="false" />
-      <span className="text-label-caps font-label-caps">SCORE: 12,450</span>
+      <span className="text-label-caps font-label-caps">SCORE: {scoreLabel}</span>
       </a>
       <a className="flex items-center gap-4 p-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant opacity-80 active:scale-95 transition-colors" href="#" data-action-id="mult-x4-5-3" onClick={(event) => { event.preventDefault(); actions?.["mult-x4-5-3"]?.(); }}>
       <Gauge aria-hidden={true} focusable="false" />
-      <span className="text-label-caps font-label-caps">MULT: x4.5</span>
+      <span className="text-label-caps font-label-caps">MULT: x{multiplier}</span>
       </a>
       <a className="flex items-center gap-4 p-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant opacity-80 active:scale-95 transition-colors" href="#" data-action-id="lvl-08-4" onClick={(event) => { event.preventDefault(); actions?.["lvl-08-4"]?.(); }}>
       <Layers aria-hidden={true} focusable="false" />
-      <span className="text-label-caps font-label-caps">LVL: 08</span>
+      <span className="text-label-caps font-label-caps">LVL: {levelLabel}</span>
       </a>
       </nav>
       <div className="p-6 mt-auto">
@@ -90,15 +101,15 @@ export function GameplaySwitchyardLite({ actions, runtime }: GameplaySwitchyardL
       <div className="md:hidden absolute top-4 left-4 right-4 flex justify-between items-center z-10 bg-surface-container-high/80 backdrop-blur-md p-3 rounded-lg border border-outline-variant">
       <div className="flex flex-col">
       <span className="text-label-caps font-label-caps text-on-surface-variant">SCORE</span>
-      <span className="text-technical-md font-technical-md text-primary-fixed">12,450</span>
+      <span className="text-technical-md font-technical-md text-primary-fixed">{scoreLabel}</span>
       </div>
       <div className="flex flex-col items-center">
       <span className="text-label-caps font-label-caps text-on-surface-variant">MULT</span>
-      <span className="text-technical-md font-technical-md text-tertiary-fixed">x4.5</span>
+      <span className="text-technical-md font-technical-md text-tertiary-fixed">x{multiplier}</span>
       </div>
       <div className="flex flex-col items-end">
       <span className="text-label-caps font-label-caps text-on-surface-variant">LVL</span>
-      <span className="text-technical-md font-technical-md text-on-surface">08</span>
+      <span className="text-technical-md font-technical-md text-on-surface">{levelLabel}</span>
       </div>
       </div>
       {/* The Grid Canvas (Centered) */}
@@ -114,7 +125,7 @@ export function GameplaySwitchyardLite({ actions, runtime }: GameplaySwitchyardL
       <div className="absolute top-[124px] left-[252px] w-4 h-4 rounded-full bg-surface border-2 border-outline-variant z-10"></div>
       <div className="absolute top-[252px] left-[124px] w-4 h-4 rounded-full bg-surface border-2 border-outline-variant z-10"></div>
       {/* The Train */}
-      <div className="absolute top-[120px] left-0 w-8 h-6 bg-primary-fixed border-b-2 border-on-primary-fixed-variant train z-20 flex items-center justify-center">
+      <div className="absolute top-[120px] left-0 w-8 h-6 bg-primary-fixed border-b-2 border-on-primary-fixed-variant train z-20 flex items-center justify-center" style={{ left: playerLeft, top: playerTop }}>
       <ChevronRight style={{fontVariationSettings: "'FILL' 1"}} className="text-on-primary-fixed text-[16px]" aria-hidden={true} focusable="false" />
       </div>
       {/* Switch Control Buttons (Interactive Overlays) */}
@@ -123,14 +134,14 @@ export function GameplaySwitchyardLite({ actions, runtime }: GameplaySwitchyardL
       </button>
       {/* Status Chips (In-canvas alerts) */}
       <div className="absolute top-4 right-4 bg-tertiary-fixed text-on-tertiary-fixed px-2 py-1 text-label-caps font-label-caps border border-tertiary">
-                           ON TIME
+                           {statusLabel}
                        </div>
       </div>
       {/* In-game Pause/Action Overlay (Bottom Right) */}
       <div className="absolute bottom-8 right-8 flex gap-4 z-30 hidden md:flex">
       <button className="bg-surface-container-high border border-outline-variant text-on-surface px-6 py-3 rounded-lg flex items-center gap-2 btn-tactile border-b-outline hover:bg-surface-container-highest" type="button" data-action-id="pause-4" onClick={actions?.["pause-4"]}>
       <Pause aria-hidden={true} focusable="false" />
-      <span className="text-technical-md font-technical-md">PAUSE</span>
+      <span className="text-technical-md font-technical-md">{actionLabel}</span>
       </button>
       </div>
       </main>

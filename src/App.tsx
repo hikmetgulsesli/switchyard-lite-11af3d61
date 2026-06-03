@@ -8,6 +8,9 @@ import {
   switchyardLiteReducer,
   type SwitchyardLiteScreen,
 } from "./features/switchyard-lite/switchyard-lite.store";
+import { actPauseGame } from "./features/surf-gameplay/act_pause_game";
+import { actRestartGame } from "./features/surf-gameplay/act_restart_game";
+import { actStartGame } from "./features/surf-gameplay/act_start_game";
 import { installSwitchyardLiteTestBridge } from "./test/bridge";
 
 export default function App() {
@@ -41,22 +44,22 @@ export default function App() {
         dispatch({ type: "switchLane", direction: 1 });
       }
 
-      if (event.key === " " || event.key === "Spacebar") {
+      if (event.key === " " || event.key === "Spacebar" || event.key === "Escape") {
         event.preventDefault();
-        dispatch({ type: "togglePause" });
+        actPauseGame(dispatch, state);
       }
     };
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [state.activeScreen]);
+  }, [state]);
 
   const start = useCallback(() => {
-    dispatch({ type: "start" });
+    actStartGame(dispatch);
   }, []);
 
   const restart = useCallback(() => {
-    dispatch({ type: "restart" });
+    actRestartGame(dispatch);
   }, []);
 
   const setRuntimeDifficulty = useCallback((nextDifficulty: SwitchyardLiteDifficulty) => {
@@ -71,13 +74,14 @@ export default function App() {
     () => ({
       "settings-1": () => navigate("settings"),
       "restart-2": restart,
+      "status-playing-1": start,
       "sync-alt-3": () => dispatch({ type: "step", multiplier: 2 }),
-      "pause-4": () => dispatch({ type: "togglePause" }),
+      "pause-4": () => actPauseGame(dispatch, state),
       "resume-5": () => dispatch({ type: "resume" }),
       "restart-6": restart,
       "quit-7": () => navigate("settings"),
     }),
-    [navigate, restart],
+    [navigate, restart, start, state],
   );
 
   const settingsActions = useMemo(
@@ -99,7 +103,7 @@ export default function App() {
       restart,
       step: (multiplier) => dispatch({ type: "step", multiplier }),
       switchLane: (direction) => dispatch({ type: "switchLane", direction }),
-      pause: () => dispatch({ type: "togglePause" }),
+      pause: () => actPauseGame(dispatch, state),
       resume: () => dispatch({ type: "resume" }),
       setDifficulty: setRuntimeDifficulty,
       savePreferences: () => dispatch({ type: "savePreferences" }),
