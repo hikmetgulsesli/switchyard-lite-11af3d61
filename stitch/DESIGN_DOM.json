@@ -1,0 +1,758 @@
+{
+  "generatedAt": "2026-06-03T05:45:23.109Z",
+  "screenCount": 2,
+  "screens": {
+    "531591f0d25c4ce88cfb11077e08fd8f": {
+      "screenId": "531591f0d25c4ce88cfb11077e08fd8f",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "relative",
+            "z-20",
+            "flex-1",
+            "flex",
+            "items-center",
+            "justify-center",
+            "p-margin-mobile",
+            "md:p-margin-desktop",
+            "h-full"
+          ],
+          "childCount": 15
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "close",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:text-primary-fixed",
+            "transition-colors",
+            "active:translate-y-0.5"
+          ],
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "EASY",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "font-technical-md",
+            "text-technical-md",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-high",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "NORMAL",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "font-technical-md",
+            "text-technical-md",
+            "bg-primary-container",
+            "text-on-primary-container",
+            "border",
+            "border-primary-fixed",
+            "shadow-[inset_0_1px_0_theme('colors.primary')]"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "HARD",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "font-technical-md",
+            "text-technical-md",
+            "text-on-surface-variant",
+            "hover:bg-surface-container-high",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Return to Gameplay",
+          "classes": [
+            "px-6",
+            "py-3",
+            "font-technical-md",
+            "text-technical-md",
+            "text-on-surface",
+            "bg-surface-container-highest",
+            "border",
+            "border-outline-variant",
+            "hover:bg-surface-bright",
+            "active:translate-y-0.5",
+            "active:shadow-none",
+            "shadow-[0_2px_0_theme('colors.outline-variant')]",
+            "transition-all",
+            "uppercase",
+            "tracking-wide"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Save Preferences",
+          "classes": [
+            "px-6",
+            "py-3",
+            "font-technical-md",
+            "text-technical-md",
+            "text-on-primary-fixed",
+            "bg-primary-fixed",
+            "hover:brightness-110",
+            "active:translate-y-0.5",
+            "active:shadow-none",
+            "shadow-[0_2px_0_theme('colors.on-primary-fixed-variant')]",
+            "transition-all",
+            "uppercase",
+            "tracking-wide",
+            "border",
+            "border-transparent",
+            "focus:ring-2",
+            "focus:ring-offset-2",
+            "focus:ring-offset-surface-dim",
+            "focus:ring-primary-fixed"
+          ],
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "range",
+          "label": "range",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "w-full",
+            "appearance-none",
+            "bg-transparent",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-primary-fixed"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "settings",
+        "close",
+        "keyboard"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "surface-dim": "#161308",
+        "background": "#161308",
+        "tertiary": "#defcff",
+        "surface-container-highest": "#393528",
+        "on-error-container": "#ffdad6",
+        "on-surface-variant": "#d0c6ab",
+        "surface-container-high": "#2e2a1e",
+        "inverse-surface": "#eae2cf",
+        "secondary-fixed": "#d5e3fc",
+        "primary-fixed-dim": "#e9c400",
+        "surface-container": "#231f14",
+        "primary": "#fff6df",
+        "error": "#ffb4ab",
+        "on-tertiary-fixed-variant": "#004f54",
+        "error-container": "#93000a",
+        "on-tertiary": "#00363a",
+        "inverse-primary": "#705d00",
+        "on-tertiary-fixed": "#002022",
+        "tertiary-container": "#00f1ff",
+        "on-secondary-fixed": "#0d1c2e",
+        "surface-container-lowest": "#110e05",
+        "on-background": "#eae2cf",
+        "on-secondary": "#233144",
+        "outline-variant": "#4d4732",
+        "secondary-fixed-dim": "#b9c7df",
+        "secondary": "#b9c7df",
+        "on-surface": "#eae2cf",
+        "outline": "#999077",
+        "on-primary-fixed": "#221b00",
+        "tertiary-fixed-dim": "#00dbe8",
+        "on-secondary-container": "#abb9d1",
+        "on-primary-fixed-variant": "#544600",
+        "surface-tint": "#e9c400",
+        "on-primary": "#3a3000",
+        "primary-fixed": "#ffe16d",
+        "surface-container-low": "#1f1b10",
+        "on-error": "#690005",
+        "surface-bright": "#3d392c",
+        "tertiary-fixed": "#79f5ff",
+        "primary-container": "#ffd700",
+        "surface": "#161308",
+        "on-primary-container": "#705e00",
+        "secondary-container": "#3c4a5e",
+        "inverse-on-surface": "#343024",
+        "on-secondary-fixed-variant": "#3a485b",
+        "on-tertiary-container": "#006a70",
+        "surface-variant": "#393528"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "3"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "close",
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "EASY",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "NORMAL",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "HARD",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Return to Gameplay",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Save Preferences",
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "input",
+          "label": "range",
+          "type": "range",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "Return to Gameplay",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Save Preferences",
+          "icon": null,
+          "active": true
+        }
+      ],
+      "title": "Game Settings - Switchyard Lite"
+    },
+    "cf1c40d214cb4b51b4c67fd831eb6c38": {
+      "screenId": "cf1c40d214cb4b51b4c67fd831eb6c38",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "fixed",
+            "top-0",
+            "left-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-margin-mobile",
+            "h-16"
+          ],
+          "childCount": 6
+        },
+        {
+          "tag": "aside",
+          "layout": "flex-col",
+          "classes": [
+            "hidden",
+            "lg:flex",
+            "flex-col",
+            "fixed",
+            "left-0",
+            "top-16",
+            "h-[calc(100vh-64px)]",
+            "z-40",
+            "bg-surface-dim/80",
+            "backdrop-blur-md"
+          ],
+          "childCount": 3
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "relative",
+            "lg:ml-64",
+            "bg-surface-dim",
+            "grid-pattern",
+            "flex",
+            "items-center",
+            "justify-center",
+            "p-4"
+          ],
+          "childCount": 14
+        },
+        {
+          "tag": "nav",
+          "layout": "flex-row",
+          "classes": [
+            "fixed",
+            "bottom-0",
+            "left-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-around",
+            "items-center",
+            "px-4",
+            "py-2"
+          ],
+          "childCount": 0
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Settings",
+          "classes": [
+            "text-primary-fixed",
+            "dark:text-primary-fixed-dim",
+            "hover:bg-surface-container-highest",
+            "transition-colors",
+            "active:translate-y-0.5",
+            "transition-transform",
+            "p-2",
+            "rounded-DEFAULT",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Restart",
+          "classes": [
+            "text-primary-fixed",
+            "dark:text-primary-fixed-dim",
+            "hover:bg-surface-container-highest",
+            "transition-colors",
+            "active:translate-y-0.5",
+            "transition-transform",
+            "p-2",
+            "rounded-DEFAULT",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "replay",
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "button",
+          "label": "sync_alt",
+          "classes": [
+            "absolute",
+            "top-[160px]",
+            "left-[112px]",
+            "w-10",
+            "h-10",
+            "bg-surface-container-high",
+            "border",
+            "border-outline",
+            "rounded-lg",
+            "flex",
+            "items-center",
+            "justify-center",
+            "btn-tactile",
+            "border-b-outline",
+            "z-30",
+            "hover:bg-surface-container-highest"
+          ],
+          "icon": "sync_alt",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "pause",
+          "classes": [
+            "bg-surface-container-high",
+            "border",
+            "border-outline-variant",
+            "text-on-surface",
+            "px-6",
+            "py-3",
+            "rounded-lg",
+            "flex",
+            "items-center",
+            "gap-2",
+            "btn-tactile",
+            "border-b-outline",
+            "hover:bg-surface-container-highest"
+          ],
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "STATUS: PLAYING",
+          "href": "#",
+          "classes": [
+            "text-label-caps",
+            "font-label-caps"
+          ],
+          "icon": "play_arrow",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "SCORE: 12,450",
+          "href": "#",
+          "classes": [
+            "text-label-caps",
+            "font-label-caps"
+          ],
+          "icon": "stars",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "MULT: x4.5",
+          "href": "#",
+          "classes": [
+            "text-label-caps",
+            "font-label-caps"
+          ],
+          "icon": "speed",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "LVL: 08",
+          "href": "#",
+          "classes": [
+            "text-label-caps",
+            "font-label-caps"
+          ],
+          "icon": "layers",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Resume",
+          "href": "#",
+          "classes": [
+            "text-label-caps",
+            "font-label-caps",
+            "mt-1"
+          ],
+          "icon": "play_circle",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Restart",
+          "href": "#",
+          "classes": [
+            "text-label-caps",
+            "font-label-caps",
+            "mt-1"
+          ],
+          "icon": "refresh",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Quit",
+          "href": "#",
+          "classes": [
+            "text-label-caps",
+            "font-label-caps",
+            "mt-1"
+          ],
+          "icon": "cancel",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "settings",
+        "replay",
+        "play_arrow",
+        "stars",
+        "speed",
+        "layers",
+        "keyboard",
+        "chevron_right",
+        "sync_alt",
+        "pause",
+        "play_circle",
+        "refresh",
+        "cancel"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "surface-dim": "#161308",
+        "background": "#161308",
+        "tertiary": "#defcff",
+        "surface-container-highest": "#393528",
+        "on-error-container": "#ffdad6",
+        "on-surface-variant": "#d0c6ab",
+        "surface-container-high": "#2e2a1e",
+        "inverse-surface": "#eae2cf",
+        "secondary-fixed": "#d5e3fc",
+        "primary-fixed-dim": "#e9c400",
+        "surface-container": "#231f14",
+        "primary": "#fff6df",
+        "error": "#ffb4ab",
+        "on-tertiary-fixed-variant": "#004f54",
+        "error-container": "#93000a",
+        "on-tertiary": "#00363a",
+        "inverse-primary": "#705d00",
+        "on-tertiary-fixed": "#002022",
+        "tertiary-container": "#00f1ff",
+        "on-secondary-fixed": "#0d1c2e",
+        "surface-container-lowest": "#110e05",
+        "on-background": "#eae2cf",
+        "on-secondary": "#233144",
+        "outline-variant": "#4d4732",
+        "secondary-fixed-dim": "#b9c7df",
+        "secondary": "#b9c7df",
+        "on-surface": "#eae2cf",
+        "outline": "#999077",
+        "on-primary-fixed": "#221b00",
+        "tertiary-fixed-dim": "#00dbe8",
+        "on-secondary-container": "#abb9d1",
+        "on-primary-fixed-variant": "#544600",
+        "surface-tint": "#e9c400",
+        "on-primary": "#3a3000",
+        "primary-fixed": "#ffe16d",
+        "surface-container-low": "#1f1b10",
+        "on-error": "#690005",
+        "surface-bright": "#3d392c",
+        "tertiary-fixed": "#79f5ff",
+        "primary-container": "#ffd700",
+        "surface": "#161308",
+        "on-primary-container": "#705e00",
+        "secondary-container": "#3c4a5e",
+        "inverse-on-surface": "#343024",
+        "on-secondary-fixed-variant": "#3a485b",
+        "on-tertiary-container": "#006a70",
+        "surface-variant": "#393528"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "4"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "STATUS: PLAYING",
+          "icon": "play_arrow",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "SCORE: 12,450",
+          "icon": "stars",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "MULT: x4.5",
+          "icon": "speed",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "LVL: 08",
+          "icon": "layers",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Resume",
+          "icon": "play_circle",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Restart",
+          "icon": "refresh",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Quit",
+          "icon": "cancel",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "Settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Restart",
+          "icon": "replay",
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "button",
+          "label": "sync_alt",
+          "icon": "sync_alt",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "pause",
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "link",
+          "label": "STATUS: PLAYING",
+          "icon": "play_arrow",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "SCORE: 12,450",
+          "icon": "stars",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "MULT: x4.5",
+          "icon": "speed",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "LVL: 08",
+          "icon": "layers",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Resume",
+          "icon": "play_circle",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Restart",
+          "icon": "refresh",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Quit",
+          "icon": "cancel",
+          "route": "#",
+          "active": true
+        }
+      ],
+      "title": "Gameplay - Switchyard Lite"
+    }
+  }
+}

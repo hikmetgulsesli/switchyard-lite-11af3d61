@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Game Settings - SWITCHYARD LITE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=JetBrains+Mono:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#161308",
+                        "background": "#161308",
+                        "tertiary": "#defcff",
+                        "surface-container-highest": "#393528",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#d0c6ab",
+                        "surface-container-high": "#2e2a1e",
+                        "inverse-surface": "#eae2cf",
+                        "secondary-fixed": "#d5e3fc",
+                        "primary-fixed-dim": "#e9c400",
+                        "surface-container": "#231f14",
+                        "primary": "#fff6df",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#00363a",
+                        "inverse-primary": "#705d00",
+                        "on-tertiary-fixed": "#002022",
+                        "tertiary-container": "#00f1ff",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "surface-container-lowest": "#110e05",
+                        "on-background": "#eae2cf",
+                        "on-secondary": "#233144",
+                        "outline-variant": "#4d4732",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "secondary": "#b9c7df",
+                        "on-surface": "#eae2cf",
+                        "outline": "#999077",
+                        "on-primary-fixed": "#221b00",
+                        "tertiary-fixed-dim": "#00dbe8",
+                        "on-secondary-container": "#abb9d1",
+                        "on-primary-fixed-variant": "#544600",
+                        "surface-tint": "#e9c400",
+                        "on-primary": "#3a3000",
+                        "primary-fixed": "#ffe16d",
+                        "surface-container-low": "#1f1b10",
+                        "on-error": "#690005",
+                        "surface-bright": "#3d392c",
+                        "tertiary-fixed": "#79f5ff",
+                        "primary-container": "#ffd700",
+                        "surface": "#161308",
+                        "on-primary-container": "#705e00",
+                        "secondary-container": "#3c4a5e",
+                        "inverse-on-surface": "#343024",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "on-tertiary-container": "#006a70",
+                        "surface-variant": "#393528"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "playfield-cell": "64px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "panel-padding": "24px",
+                        "grid-unit": "8px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "technical-lg": ["JetBrains Mono"],
+                        "headline-sm": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg": ["Inter"],
+                        "technical-md": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "technical-lg": ["20px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "fontWeight": "800"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "technical-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .bg-grid-pattern {
+            background-image: 
+                linear-gradient(to right, theme('colors.outline-variant') 1px, transparent 1px),
+                linear-gradient(to bottom, theme('colors.outline-variant') 1px, transparent 1px);
+            background-size: theme('spacing.playfield-cell') theme('spacing.playfield-cell');
+        }
+
+        /* Custom Slider Styling to match Arcade aesthetic */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 12px;
+            background: theme('colors.primary-fixed');
+            cursor: pointer;
+            border-radius: 0;
+            border: 1px solid theme('colors.surface-dim');
+            box-shadow: 0 2px 0 theme('colors.on-primary-fixed-variant');
+        }
+        
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: theme('colors.surface-container-highest');
+            border-radius: 0;
+            border: 1px solid theme('colors.outline-variant');
+        }
+        
+        /* Glassmorphism panel for settings */
+        .settings-panel {
+            backdrop-filter: blur(8px) brightness(0.6);
+            -webkit-backdrop-filter: blur(8px) brightness(0.6);
+            background-color: rgba(46, 42, 30, 0.7); /* surface-container-high with opacity */
+        }
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col antialiased">
+<!-- Top Navigation Anchor (Suppressed for non-destination overlay, but kept in DOM as context per rules if it were a full page, here we omit the full TopAppBar structurally since it's a modal overlaying gameplay, but provide a mock background) -->
+<!-- Faked Gameplay Background -->
+<div class="absolute inset-0 bg-grid-pattern opacity-30 z-0"></div>
+<!-- Blurred overlay effect -->
+<div class="absolute inset-0 bg-surface-dim/40 backdrop-blur-sm z-10"></div>
+<!-- Main Settings Overlay Canvas -->
+<main class="relative z-20 flex-1 flex items-center justify-center p-margin-mobile md:p-margin-desktop h-full">
+<!-- Settings Modal Panel -->
+<div class="settings-panel border border-outline w-full max-w-2xl rounded shadow-2xl flex flex-col" style="box-shadow: 0 8px 32px rgba(0,0,0,0.5);">
+<!-- Modal Header -->
+<header class="p-panel-padding border-b border-outline-variant flex justify-between items-center bg-surface-container-high/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">settings</span>
+<h1 class="font-technical-lg text-technical-lg text-primary-fixed uppercase tracking-tight">System Config</h1>
+</div>
+<!-- Close Button placeholder -->
+<button class="text-on-surface-variant hover:text-primary-fixed transition-colors active:translate-y-0.5">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Modal Content -->
+<div class="p-panel-padding flex flex-col gap-8 overflow-y-auto">
+<!-- Audio Controls (Sliders) -->
+<section class="flex flex-col gap-6">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">Output Levels</h2>
+<!-- Game Speed (Repurposed as Master Vol to fit Audio section, or keep as Speed) -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<label class="font-technical-md text-technical-md text-inverse-surface uppercase">Game Speed</label>
+<span class="font-label-caps text-label-caps text-primary-fixed">1.0x</span>
+</div>
+<input class="w-full appearance-none bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-fixed" max="100" min="0" type="range" value="50"/>
+</div>
+<!-- SFX Volume -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<label class="font-technical-md text-technical-md text-inverse-surface uppercase">SFX Volume</label>
+<span class="font-label-caps text-label-caps text-primary-fixed">85%</span>
+</div>
+<input class="w-full appearance-none bg-transparent focus:outline-none focus:ring-2 focus:ring-primary-fixed" max="100" min="0" type="range" value="85"/>
+</div>
+</section>
+<hr class="border-outline-variant"/>
+<!-- Difficulty Selector (Segmented Control) -->
+<section class="flex flex-col gap-4">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Operation Mode</h2>
+<div class="flex p-1 bg-surface-container-highest border border-outline-variant gap-1">
+<button class="flex-1 py-2 font-technical-md text-technical-md text-on-surface-variant hover:bg-surface-container-high transition-colors">EASY</button>
+<button class="flex-1 py-2 font-technical-md text-technical-md bg-primary-container text-on-primary-container border border-primary-fixed shadow-[inset_0_1px_0_theme('colors.primary')]">NORMAL</button>
+<button class="flex-1 py-2 font-technical-md text-technical-md text-on-surface-variant hover:bg-surface-container-high transition-colors">HARD</button>
+</div>
+</section>
+<hr class="border-outline-variant"/>
+<!-- Input Help Section -->
+<section class="flex flex-col gap-4 bg-surface-container-lowest p-4 border border-outline-variant">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">keyboard</span>
+                        Input Diagnostics
+                    </h2>
+<ul class="flex flex-col gap-3">
+<li class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-inverse-surface">Switch Junction</span>
+<div class="bg-surface-bright px-3 py-1 font-technical-md text-technical-md text-primary-fixed border border-outline-variant shadow-[0_2px_0_theme('colors.surface-container-highest')]">CLICK</div>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-inverse-surface">Emergency Boost</span>
+<div class="bg-surface-bright px-3 py-1 font-technical-md text-technical-md text-primary-fixed border border-outline-variant shadow-[0_2px_0_theme('colors.surface-container-highest')]">SPACEBAR</div>
+</li>
+</ul>
+</section>
+</div>
+<!-- Modal Actions -->
+<footer class="p-panel-padding border-t border-outline-variant flex flex-col sm:flex-row gap-4 bg-surface-container-high/80 justify-end">
+<button class="px-6 py-3 font-technical-md text-technical-md text-on-surface bg-surface-container-highest border border-outline-variant hover:bg-surface-bright active:translate-y-0.5 active:shadow-none shadow-[0_2px_0_theme('colors.outline-variant')] transition-all uppercase tracking-wide">
+                    Return to Gameplay
+                </button>
+<button class="px-6 py-3 font-technical-md text-technical-md text-on-primary-fixed bg-primary-fixed hover:brightness-110 active:translate-y-0.5 active:shadow-none shadow-[0_2px_0_theme('colors.on-primary-fixed-variant')] transition-all uppercase tracking-wide border border-transparent focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-dim focus:ring-primary-fixed">
+                    Save Preferences
+                </button>
+</footer>
+</div>
+</main>
+</body></html>

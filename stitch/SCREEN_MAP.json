@@ -1,0 +1,20 @@
+[
+  {
+    "screenId": "531591f0d25c4ce88cfb11077e08fd8f",
+    "name": "Game Settings - Switchyard Lite",
+    "type": "settings",
+    "description": "Game Settings - Switchyard Lite screen",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  },
+  {
+    "screenId": "cf1c40d214cb4b51b4c67fd831eb6c38",
+    "name": "Gameplay - Switchyard Lite",
+    "type": "game",
+    "description": "Gameplay - Switchyard Lite screen",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  }
+]

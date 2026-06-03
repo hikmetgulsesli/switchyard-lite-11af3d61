@@ -1,0 +1,24 @@
+[
+  {
+    "screenId": "531591f0d25c4ce88cfb11077e08fd8f",
+    "title": "Game Settings - Switchyard Lite",
+    "htmlFile": "531591f0d25c4ce88cfb11077e08fd8f.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ6Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpZCiVodG1sX2IxZjE2ODM1NzZiODRlNTU4Y2I4ZDY1YjRjYmNkMTUxEgsSBxCN19Wi9xcYAZIBIgoKcHJvamVjdF9pZBIUQhI0MTcyNjkxNDA4MzUzNzExMjA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/switchyard-lite-11af3d61/stitch/531591f0d25c4ce88cfb11077e08fd8f.html",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  },
+  {
+    "screenId": "cf1c40d214cb4b51b4c67fd831eb6c38",
+    "title": "Gameplay - Switchyard Lite",
+    "htmlFile": "cf1c40d214cb4b51b4c67fd831eb6c38.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ6Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpZCiVodG1sXzAzOGUwZTFlOWMxYzRlYzhiZTlkZDVmN2IzNTgxODEwEgsSBxCN19Wi9xcYAZIBIgoKcHJvamVjdF9pZBIUQhI0MTcyNjkxNDA4MzUzNzExMjA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/switchyard-lite-11af3d61/stitch/cf1c40d214cb4b51b4c67fd831eb6c38.html",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  }
+]
