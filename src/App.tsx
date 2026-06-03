@@ -8,8 +8,6 @@ import {
   switchyardLiteReducer,
   type SwitchyardLiteScreen,
 } from "./features/switchyard-lite/switchyard-lite.store";
-import { actReturnToGameplay } from "./features/surf-game-settings/act_return_to_gameplay";
-import { actSavePreferences } from "./features/surf-game-settings/act_save_preferences";
 import { actPauseGame } from "./features/surf-gameplay/act_pause_game";
 import { actRestartGame } from "./features/surf-gameplay/act_restart_game";
 import { actStartGame } from "./features/surf-gameplay/act_start_game";
@@ -92,8 +90,8 @@ export default function App() {
       "easy-2": () => setRuntimeDifficulty("easy"),
       "normal-3": () => setRuntimeDifficulty("normal"),
       "hard-4": () => setRuntimeDifficulty("hard"),
-      "return-to-gameplay-5": () => actReturnToGameplay(dispatch),
-      "save-preferences-6": () => actSavePreferences(dispatch),
+      "return-to-gameplay-5": () => navigate("gameplay"),
+      "save-preferences-6": () => dispatch({ type: "savePreferences" }),
     }),
     [navigate, setRuntimeDifficulty],
   );
@@ -108,12 +106,12 @@ export default function App() {
       pause: () => actPauseGame(dispatch, state),
       resume: () => dispatch({ type: "resume" }),
       setDifficulty: setRuntimeDifficulty,
-      savePreferences: () => actSavePreferences(dispatch),
+      savePreferences: () => dispatch({ type: "savePreferences" }),
     });
   }, [navigate, restart, setRuntimeDifficulty, start, state]);
 
   return (
-    <div className="min-h-screen w-full overflow-hidden bg-surface-dim" data-setfarm-root data-testid="setfarm-app-root">
+    <div className="min-h-dvh w-full overflow-hidden bg-surface-dim" data-setfarm-root data-testid="setfarm-app-root">
       {state.lastError ? (
         <div
           role="status"
