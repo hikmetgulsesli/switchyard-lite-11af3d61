@@ -1,0 +1,242 @@
+[
+  {
+    "screenId": "531591f0d25c4ce88cfb11077e08fd8f",
+    "screenTitle": "Game Settings - Switchyard Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "close",
+        "line": 164
+      },
+      {
+        "type": "button",
+        "label": "EASY",
+        "line": 195
+      },
+      {
+        "type": "button",
+        "label": "NORMAL",
+        "line": 196
+      },
+      {
+        "type": "button",
+        "label": "HARD",
+        "line": 197
+      },
+      {
+        "type": "button",
+        "label": "Return to Gameplay",
+        "line": 221
+      },
+      {
+        "type": "button",
+        "label": "Save Preferences",
+        "line": 224
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 179
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 187
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "close",
+        "line": 164
+      },
+      {
+        "type": "button",
+        "label": "EASY",
+        "line": 195
+      },
+      {
+        "type": "button",
+        "label": "NORMAL",
+        "line": 196
+      },
+      {
+        "type": "button",
+        "label": "HARD",
+        "line": 197
+      },
+      {
+        "type": "button",
+        "label": "Return to Gameplay",
+        "line": 221
+      },
+      {
+        "type": "button",
+        "label": "Save Preferences",
+        "line": 224
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 179
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 187
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 8,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "cf1c40d214cb4b51b4c67fd831eb6c38",
+    "screenTitle": "Gameplay - Switchyard Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "STATUS: PLAYING",
+        "href": "#",
+        "line": 252
+      },
+      {
+        "type": "link",
+        "label": "SCORE: 12,450",
+        "href": "#",
+        "line": 256
+      },
+      {
+        "type": "link",
+        "label": "MULT: x4.5",
+        "href": "#",
+        "line": 260
+      },
+      {
+        "type": "link",
+        "label": "LVL: 08",
+        "href": "#",
+        "line": 264
+      },
+      {
+        "type": "link",
+        "label": "Resume",
+        "href": "#",
+        "line": 329
+      },
+      {
+        "type": "link",
+        "label": "Restart",
+        "href": "#",
+        "line": 333
+      },
+      {
+        "type": "link",
+        "label": "Quit",
+        "href": "#",
+        "line": 337
+      },
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 235
+      },
+      {
+        "type": "button",
+        "label": "Restart",
+        "line": 238
+      },
+      {
+        "type": "button",
+        "label": "sync_alt",
+        "line": 310
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 320
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "STATUS: PLAYING",
+        "href": "#",
+        "line": 252
+      },
+      {
+        "type": "link",
+        "label": "SCORE: 12,450",
+        "href": "#",
+        "line": 256
+      },
+      {
+        "type": "link",
+        "label": "MULT: x4.5",
+        "href": "#",
+        "line": 260
+      },
+      {
+        "type": "link",
+        "label": "LVL: 08",
+        "href": "#",
+        "line": 264
+      },
+      {
+        "type": "link",
+        "label": "Resume",
+        "href": "#",
+        "line": 329
+      },
+      {
+        "type": "link",
+        "label": "Restart",
+        "href": "#",
+        "line": 333
+      },
+      {
+        "type": "link",
+        "label": "Quit",
+        "href": "#",
+        "line": 337
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 235
+      },
+      {
+        "type": "button",
+        "label": "Restart",
+        "line": 238
+      },
+      {
+        "type": "button",
+        "label": "sync_alt",
+        "line": 310
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 320
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 11,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
